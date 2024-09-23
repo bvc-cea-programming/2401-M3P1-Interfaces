@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour,IShootable
 {
     private float _health=100;
     private float _damageValue = 30;
@@ -14,17 +14,20 @@ public class Enemy : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
    
-    public void Damage()
+    private void Damage()
     {
-        _animator.SetTrigger("Hit");
         Debug.Log("Enemy damaged");
+        _animator.SetTrigger("Hit");
         _health -= _damageValue;
         if (_health < 0)
         {
             Destroy(gameObject);
             Debug.Log("Enemy destroyed");
         }
-
+    }
+    public void GetDamage()
+    {
+        Damage();
     }
 
 }
