@@ -20,20 +20,9 @@ public class Shooter : MonoBehaviour
 
     private void ExecuteCommand(RaycastHit hit)
     {
-        if(hit.collider.TryGetComponent<Tree>(out Tree tree))
-        {
-           tree.ShakeTree();
-        }
-
-        if (hit.collider.TryGetComponent<Enemy>(out Enemy enemy))
-        {
-            enemy.Damage();
-        }
-
-        if (hit.collider.TryGetComponent<Barrell>(out Barrell barrell))
-        {
-            barrell.Explode();
-        }
+        IShootable shoot = hit.collider.gameObject.GetComponent<IShootable>();
+        shoot.GetDamage();
+        
         Debug.Log(hit.collider.gameObject.name);
     }
 }
