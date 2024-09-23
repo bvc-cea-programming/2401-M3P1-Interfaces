@@ -176,9 +176,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2.0164766
+  m_Height: 3.89
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9926126, z: 0}
+  m_Center: {x: 0, y: 1.52, z: 0}
 --- !u!114 &183140433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c1924a2bd62934983c87de33f5f9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1122682635}
 --- !u!1 &294344146
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,9 +246,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.31950784
-  m_Height: 3.6568203
+  m_Height: 4.44
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5884159, z: -0.013501167}
+  m_Center: {x: 0, y: 2.13, z: -0.013501167}
 --- !u!114 &294344149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a379d5b113e1143a77e6e43fdfefc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 294344150}
 --- !u!95 &294344150
 Animator:
   serializedVersion: 5
