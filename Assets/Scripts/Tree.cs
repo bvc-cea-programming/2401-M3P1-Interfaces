@@ -6,7 +6,8 @@ public class Tree : MonoBehaviour
     public Animator animator;
     public void Start()
     {
-        animator.GetComponent<Animator>();
+        
+        animator = GetComponent<Animator>();
     }
     public void ShakeTree()
     {
