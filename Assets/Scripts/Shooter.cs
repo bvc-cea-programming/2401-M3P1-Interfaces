@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    Tree tree;
-    Enemy enemy;
-    Barrell barrell;
+    IShootable shootableObject;
 
     private void Update()
     {
@@ -24,21 +22,15 @@ public class Shooter : MonoBehaviour
 
     private void ExecuteCommand(RaycastHit hit)
     {
-        tree = hit.collider.gameObject.GetComponent<Tree>();
-        enemy = hit.collider.gameObject.GetComponent<Enemy>();
-        barrell = hit.collider.gameObject.GetComponent<Barrell>();
+        shootableObject = hit.collider.gameObject.GetComponent<IShootable>();
 
         Debug.Log(hit.collider.gameObject.name);
-        if (tree != null)
+        if (shootableObject != null)
         {
-            tree.ShakeTree();
+            shootableObject.GetDamage();
         }
-        else if (enemy != null)
-        {
-            enemy.Damage();
-        } else if (barrell != null)
-        {
-            barrell.Explode();
-        }
+        
+
+
     }
 }
