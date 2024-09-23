@@ -6,7 +6,7 @@ public class Barrell : MonoBehaviour
 
     public void Explode()
     {
-        Instantiate(explosionParticle, transform.position,Quaternion.identity);
+        Instantiate(explosionParticle, transform.position,transform.rotation);
         Destroy(gameObject );
 
         Debug.Log("Barrell Exploded");
