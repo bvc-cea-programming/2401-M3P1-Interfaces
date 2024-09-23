@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IShootable
 {
     private float _health=100;
     private float _damageValue = 30;
@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
             animator.SetTrigger("Hit");
            
         }
-        _health = _health - _damageValue;
+         _health = _health - _damageValue;
+        
 
         if (_health==0)
         {
@@ -26,5 +27,8 @@ public class Enemy : MonoBehaviour
 
         Debug.Log("Enemy damaged");
     }
-
+    public void GetDamage()
+    {
+        Damage();
+    }
 }

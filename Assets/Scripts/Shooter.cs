@@ -27,27 +27,16 @@ public class Shooter : MonoBehaviour
         Debug.Log(hit.collider.gameObject.name);
 
 
-       Enemy enemy = hit.collider.gameObject.GetComponent<Enemy>();
+       IShootable enemy = hit.collider.gameObject.GetComponent<IShootable>();
 
-       Tree tree= hit.collider.gameObject.GetComponent<Tree>();
-
-       Barrell barrell= hit.collider.gameObject.GetComponent<Barrell>();
+     
 
         if (enemy != null)
         {
-            enemy.Damage();
-            return; 
+            enemy.GetDamage();
+            
         }
-        if (tree != null)
-        {
-            tree.ShakeTree();
-          
-        }
-        if (barrell != null)
-        {
-            barrell.Explode();
-          
-        }
+     
 
     }
 }
