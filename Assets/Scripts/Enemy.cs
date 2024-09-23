@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour,IShootable
     private void Start()
     {
         anim = gameObject.GetComponentInChildren<Animator>();
-        Damage();
     }
 
     public void GetDamage()
