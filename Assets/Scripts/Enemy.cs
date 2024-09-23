@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IShootable
 {
     private float _health=100;
     private float _damageValue = 30;
 
     private Animator animator;
-    private void Start()
+
+    private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
     }
-    public void Damage()
+    public void GetDamage()
+    {
+        Damage();
+    }
+    private void Damage()
     {
         Debug.Log("Enemy damaged");
         
