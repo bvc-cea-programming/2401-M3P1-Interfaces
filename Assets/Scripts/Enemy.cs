@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour,IShootable
 
         _health = (_health - _damageValue);
         Debug.Log($"Health = {_health}");
+
         if (_health <= 0)
         {
             StartCoroutine(Destroy());
