@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Barrell : MonoBehaviour
+public class Barrell : MonoBehaviour, IShootable
 {
     [SerializeField] private GameObject explosionParticle;
 
-    public void Explode()
+    private void Explode()
     {
         // Instantiate the explosion particle effect at the barrell's position
         if (explosionParticle != null)
@@ -19,5 +19,11 @@ public class Barrell : MonoBehaviour
         // Destroy the barrell
         Debug.Log("Barrell Exploded");
         Destroy(gameObject);
+    }
+
+    // Implement the GetDamage method from IShootable
+    public void GetDamage()
+    {
+        Explode();
     }
 }

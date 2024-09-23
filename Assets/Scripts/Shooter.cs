@@ -19,33 +19,17 @@ public class Shooter : MonoBehaviour
     }
     private void ExecuteCommand(RaycastHit hit)
     {
-        GameObject hitObject = hit.collider.gameObject;
+        // Check if the object hit has the IShootable interface
+        IShootable shootable = hit.collider.gameObject.GetComponent<IShootable>();
 
-        // Check if the object hit is a Barrell
-        Barrell barrell = hitObject.GetComponent<Barrell>();
-        if (barrell != null)
+        if (shootable != null)
         {
-            barrell.Explode();
-            return;
+            // Call the GetDamage method on the object
+            shootable.GetDamage();
         }
-
-        // Check if the object hit is a Tree
-        Tree tree = hitObject.GetComponent<Tree>();
-        if (tree != null)
+        else
         {
-            tree.ShakeTree();
-            return;
+            Debug.Log(hit.collider.gameObject.name + " does not have implement IShootable");
         }
-
-        // Check if the object hit is an Enemy
-        Enemy enemy = hitObject.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.Damage();
-            return;
-        }
-
-        Debug.Log(hitObject.name + "has no valid command");
-        Debug.Log(hit.collider.gameObject.name);
     }
 }
