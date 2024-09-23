@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour,IShootable
 {
     private float _health=100;
     private float _damageValue = 30;
@@ -13,7 +13,12 @@ public class Enemy : MonoBehaviour
         Damage();
     }
 
-    public void Damage()
+    public void GetDamage()
+    {
+        Damage();
+    }
+
+    private void Damage()
     {
         anim.SetTrigger("Hit");
         Debug.Log("Enemy damaged");

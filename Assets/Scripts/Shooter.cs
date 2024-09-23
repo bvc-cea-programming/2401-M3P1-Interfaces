@@ -23,15 +23,15 @@ public class Shooter : MonoBehaviour
         Debug.Log(hit.collider.gameObject.name);
         if (hit.collider.gameObject.name == "Barrell")
         {
-            hit.collider.gameObject.GetComponent<Barrell>().Explode();
+            hit.collider.gameObject.GetComponent<IShootable>().GetDamage();
         }
         if (hit.collider.gameObject.name == "Tree")
         {
-            hit.collider.gameObject.GetComponent<Tree>().ShakeTree();
+            hit.collider.gameObject.GetComponent<IShootable>().GetDamage();
         }
         if (hit.collider.gameObject.name == "Enemy")
         {
-            hit.collider.gameObject.GetComponent<Enemy>().Damage();
+            hit.collider.gameObject.GetComponent<IShootable>().GetDamage();
         }
     }
 }
