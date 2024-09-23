@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shooter : MonoBehaviour
+public class Shooter : MonoBehaviour, IShootable
 {
     private void Update()
     {
@@ -20,17 +20,9 @@ public class Shooter : MonoBehaviour
 
     private void ExecuteCommand(RaycastHit hit)
     {
-        if(hit.collider.gameObject.name == "Enemy")
+        if (hit.collider.gameObject.GetComponent<IShootable>() != null)
         {
-            hit.collider.gameObject.GetComponent<Enemy>().Damage();
-        }
-        else if(hit.collider.gameObject.name == "Barrell")
-        {
-            hit.collider.gameObject.gameObject.GetComponent<Barrell>().Explode();
-        }
-        else if(hit.collider.gameObject.name == "Tree")
-        {
-            hit.collider.gameObject.GetComponent<Tree>().ShakeTree();
+            hit.collider.gameObject.GetComponent<IShootable>().GetDamage();
         }
         Debug.Log(hit.collider.gameObject.name);
     }
