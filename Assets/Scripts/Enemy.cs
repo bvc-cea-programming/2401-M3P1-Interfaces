@@ -12,13 +12,12 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _animator.SetBool("Hit",true);
-       
     }
    
     public void Damage()
     {
-      //  Debug.Log("Enemy damaged");
+        _animator.SetTrigger("Hit");
+        Debug.Log("Enemy damaged");
         _health -= _damageValue;
         if (_health < 0)
         {

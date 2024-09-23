@@ -6,7 +6,7 @@ public class Tree : MonoBehaviour
     private void Start()
     {
         shakeTree = GetComponent<Animator>();
-        ShakeTree();
+        //ShakeTree();
     }
     public void ShakeTree()
     {
