@@ -10,7 +10,13 @@ public class Enemy : MonoBehaviour
     public void Damage()
     {
         Debug.Log("Enemy damaged");
-      
+        _health -= -_damageValue;
+        if (_health < 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Enemy destroyed");
+        }
+
     }
 
 }

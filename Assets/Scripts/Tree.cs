@@ -6,13 +6,12 @@ public class Tree : MonoBehaviour
     private void Start()
     {
         shakeTree = GetComponent<Animator>();
-        Debug.Log("shakeTree is "+ shakeTree);
         ShakeTree();
     }
     public void ShakeTree()
     {
         Debug.Log("Tree Shook");
-        
-        //shakeTree.Play();
+        shakeTree.Play("Base Layer.Tree Shake", 0);
+
     }
 }

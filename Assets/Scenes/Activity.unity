@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 183140431}
   - component: {fileID: 183140432}
   - component: {fileID: 183140433}
+  - component: {fileID: 183140434}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -191,7 +192,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c1924a2bd62934983c87de33f5f9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1122682635}
+--- !u!95 &183140434
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183140430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba7cdd798ca1553468638a3e41202910, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &294344146
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a379d5b113e1143a77e6e43fdfefc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 294344150}
+  shakeTree: {fileID: 0}
 --- !u!95 &294344150
 Animator:
   serializedVersion: 5
