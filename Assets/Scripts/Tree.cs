@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
+    Animator animator;
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     public void ShakeTree()
     {
-        Debug.Log("Tree Shook");
+        animator.SetTrigger("Shake");
     }
 }
