@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Tree : MonoBehaviour
+public class Tree : MonoBehaviour, IShootable
 {
     public Animator anim;
 
@@ -9,8 +9,13 @@ public class Tree : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+    
+    public void GetDamage()
+    {
+        ShakeTree();
+    }
 
-    public void ShakeTree()
+    private void ShakeTree()
     {
         Debug.Log("Tree Shook");
         anim.SetTrigger("Shake");
