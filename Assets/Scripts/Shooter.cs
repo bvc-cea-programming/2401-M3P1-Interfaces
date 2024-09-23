@@ -21,5 +21,9 @@ public class Shooter : MonoBehaviour
     private void ExecuteCommand(RaycastHit hit)
     {
         Debug.Log(hit.collider.gameObject.name);
+        if(hit.collider.GetComponent<Enemy>())
+        {
+            hit.collider.GetComponent<Enemy>().Damage();
+        }
     }
 }
