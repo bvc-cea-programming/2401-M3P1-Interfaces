@@ -22,17 +22,10 @@ public class Shooter : MonoBehaviour
     {
         
         Debug.Log(hit.collider.gameObject.name);
-        if(hit.collider.gameObject.TryGetComponent(out Tree tree))
+        if(hit.collider.gameObject.TryGetComponent(out IShootable obj))
         {
-            tree.ShakeTree();
+            hit.collider.gameObject.GetComponent<IShootable>().getdamage();
         }
-        if (hit.collider.gameObject.TryGetComponent(out Barrell barrell))
-        {
-            barrell.Explode();
-        }
-        if (hit.collider.gameObject.TryGetComponent(out Enemy enemy))
-        {
-            enemy.Damage();
-        }
+        
     }
 }

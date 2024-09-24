@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Barrell : MonoBehaviour
+public class Barrell : MonoBehaviour, IShootable
 {
     [SerializeField] private GameObject explosionParticle;
 
@@ -9,7 +9,11 @@ public class Barrell : MonoBehaviour
     {
         
     }
-    public void Explode()
+    public void getdamage()
+    {
+        Explode();
+    }
+    private void Explode()
     {
         Debug.Log("Barrell Exploded");
         Destroy(gameObject);
