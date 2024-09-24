@@ -21,7 +21,7 @@ public class Shooter : MonoBehaviour
     private void ExecuteCommand(RaycastHit hit)
     {
         Debug.Log(hit.collider.gameObject.name);
-        /*if (hit.collider.gameObject.GetComponent<Enemy>() != null)
+        if (hit.collider.gameObject.GetComponent<Enemy>() != null)
         {
             Enemy enemy = hit.collider.gameObject.GetComponent<Enemy>();
             enemy.Damage();
@@ -35,12 +35,6 @@ public class Shooter : MonoBehaviour
         {
             Tree tree = hit.collider.gameObject.GetComponent<Tree>();
             tree.ShakeTree();
-        }*/
-
-        if (hit.collider.gameObject.GetComponent<IShootable>() != null)
-        {
-            IShootable iShootable = hit.collider.gameObject.GetComponent<IShootable>();
-            iShootable.GetDamage();
         }
 
     }
